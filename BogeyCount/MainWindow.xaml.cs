@@ -29,5 +29,10 @@ namespace BogeyCount
         {
             scores.Text = "98 101 98";
         }
+
+        private void enterScores_Click(object sender, RoutedEventArgs e)
+        {
+            enterPanel.Visibility = Visibility.Visible;
+        }
     }
 }

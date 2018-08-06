@@ -20,7 +20,7 @@
         <Border Grid.Row="1">
             <Grid>
                 <StackPanel x:Name="stackPanel" Orientation="Horizontal" VerticalAlignment="Center">
-                    <Button x:Name="enterScores" Content="Enter New Score" Margin="20,10,20,0" />
+                    <Button x:Name="enterScores" Content="Enter New Score" Margin="20,10,20,0" Click="enterScores_Click" />
                     <Button x:Name="viewScores" Content="View All Scores" Margin="20,10,20,0" Click="viewScores_Click"/>
                     <Label Content="Display scores for a specific date:" Background="{x:Null}" Foreground="White" Margin="40,5,5,0" />
                     <DatePicker Margin="5,5,0,0" />
@@ -29,9 +29,29 @@
             </Grid>
         </Border>
         <Border Grid.Row="1">
-            <ScrollViewer Margin="10,59,10,-322" Foreground="Black" Background="White">
-                <TextBlock x:Name="scores" />
-             </ScrollViewer>
+            <Grid Margin="4,58,-4,-367">
+                <ScrollViewer Foreground="Black" Background="White" Visibility="Collapsed">
+                    <TextBlock x:Name="scores" />
+                </ScrollViewer>
+                <StackPanel x:Name="enterPanel" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed">
+                    <Label Background="{x:Null}" Content="Name:" Height="Auto" Foreground="White"/>
+                    <TextBox x:Name="nameTxt" Width="200" Height="25" HorizontalAlignment="Left"/>
+                    <Label Background="{x:Null}" Content="Score:" Height="Auto" Foreground="White"/>
+                    <TextBox x:Name="scoreTxt" Width="200" Height="25" HorizontalAlignment="Left"/>
+                    <Label Background="{x:Null}" Content="Course:" Height="Auto" Foreground="White"/>
+                    <TextBox x:Name="courseTxt" Width="200" Height="25" HorizontalAlignment="Left"/>
+                    <Label Background="{x:Null}" Content="Select Date Played:" Height="Auto" Foreground="White"/>
+                    <DatePicker x:Name="datePlayed" />
+                    <Button x:Name="enterDataBtn" Content="Enter Data" Margin="0,20,0,0" Foreground="White" BorderBrush="White" >
+                        <Button.Background>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#FF5CB931"/>
+                                <GradientStop Color="#FF3E7C21" Offset="1"/>
+                            </RadialGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </StackPanel>
+            </Grid>
         </Border>
         <ItemsControl Grid.Row="0"/>
     </Grid>

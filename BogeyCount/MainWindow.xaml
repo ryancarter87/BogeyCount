@@ -16,11 +16,13 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Border Grid.Row="0">
+        <Border Grid.Row="1">
             <Grid>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                     <Button Content="Enter New Score" Margin="20,10,20,0" />
                     <Button Content="View All Scores" Margin="20,10,20,0" />
+                    <Label Content="Display scores for a specific date:" Background="{x:Null}" Foreground="White" Margin="20,5,5,0" />
+                    <DatePicker Margin="5,5,0,0" />
                 </StackPanel>
             </Grid>
         </Border>

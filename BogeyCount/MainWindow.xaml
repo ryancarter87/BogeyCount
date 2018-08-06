@@ -15,16 +15,23 @@
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Border Grid.Row="1">
             <Grid>
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                    <Button Content="Enter New Score" Margin="20,10,20,0" />
-                    <Button Content="View All Scores" Margin="20,10,20,0" />
-                    <Label Content="Display scores for a specific date:" Background="{x:Null}" Foreground="White" Margin="20,5,5,0" />
+                <StackPanel x:Name="stackPanel" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Button x:Name="enterScores" Content="Enter New Score" Margin="20,10,20,0" />
+                    <Button x:Name="viewScores" Content="View All Scores" Margin="20,10,20,0" Click="viewScores_Click"/>
+                    <Label Content="Display scores for a specific date:" Background="{x:Null}" Foreground="White" Margin="40,5,5,0" />
                     <DatePicker Margin="5,5,0,0" />
+                    <Button x:Name="dateScores" Content="Display Selected Date's Scores" Margin="5,10,0,0" />
                 </StackPanel>
             </Grid>
+        </Border>
+        <Border Grid.Row="1">
+            <ScrollViewer Margin="10,59,10,-322" Foreground="Black" Background="White">
+                <TextBlock x:Name="scores" />
+             </ScrollViewer>
         </Border>
         <ItemsControl Grid.Row="0"/>
     </Grid>

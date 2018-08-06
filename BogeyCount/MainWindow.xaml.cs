@@ -24,5 +24,10 @@ namespace BogeyCount
         {
             InitializeComponent();
         }
+
+        private void viewScores_Click(object sender, RoutedEventArgs e)
+        {
+            scores.Text = "98 101 98";
+        }
     }
 }

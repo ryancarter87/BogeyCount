@@ -7,6 +7,23 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF001F07" Offset="0"/>
+                <GradientStop Color="#FF90A896" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0">
+            <Grid>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <Button Content="Enter New Score" Margin="20,10,20,0" />
+                    <Button Content="View All Scores" Margin="20,10,20,0" />
+                </StackPanel>
+            </Grid>
+        </Border>
+        <ItemsControl Grid.Row="0"/>
     </Grid>
 </Window>

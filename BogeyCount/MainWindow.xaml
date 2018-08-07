@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BogeyCount"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Bogey Count" Height="450" Width="800">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -30,7 +30,7 @@
         </Border>
         <Border Grid.Row="1">
             <Grid Margin="4,58,-4,-367">
-                <ScrollViewer Foreground="Black" Background="White" Visibility="Collapsed">
+                <ScrollViewer x:Name="allScoresView" Foreground="Black" Background="White" Visibility="Collapsed">
                     <TextBlock x:Name="scores" />
                 </ScrollViewer>
                 <StackPanel x:Name="enterPanel" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed">
@@ -42,7 +42,7 @@
                     <TextBox x:Name="courseTxt" Width="200" Height="25" HorizontalAlignment="Left"/>
                     <Label Background="{x:Null}" Content="Select Date Played:" Height="Auto" Foreground="White"/>
                     <DatePicker x:Name="datePlayed" />
-                    <Button x:Name="enterDataBtn" Content="Enter Data" Margin="0,20,0,0" Foreground="White" BorderBrush="White" >
+                    <Button x:Name="enterDataBtn" Content="Enter Data" Margin="0,20,0,0" Foreground="White" BorderBrush="White" Click="enterDataBtn_Click" >
                         <Button.Background>
                             <RadialGradientBrush>
                                 <GradientStop Color="#FF5CB931"/>
@@ -50,6 +50,7 @@
                             </RadialGradientBrush>
                         </Button.Background>
                     </Button>
+                    <Label x:Name="enteredLbl" Foreground="#FFFFFF0B" Content="Score Entered!" HorizontalAlignment="Center" Visibility="Collapsed" />
                 </StackPanel>
             </Grid>
         </Border>

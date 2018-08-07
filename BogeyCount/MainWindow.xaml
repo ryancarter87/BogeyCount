@@ -30,16 +30,13 @@
         </Border>
         <Border Grid.Row="1">
             <Grid Margin="4,58,-4,-367">
-                <ScrollViewer x:Name="allScoresView" Foreground="Black" Background="White" Visibility="Collapsed">
-                    <TextBlock x:Name="scores" />
-                </ScrollViewer>
+                
+                <TextBox x:Name="scoresViewText" Visibility="Collapsed" VerticalScrollBarVisibility="Auto" HorizontalAlignment ="Center"/>
                 <StackPanel x:Name="enterPanel" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed">
                     <Label Background="{x:Null}" Content="Name:" Height="Auto" Foreground="White"/>
                     <TextBox x:Name="nameTxt" Width="200" Height="25" HorizontalAlignment="Left"/>
                     <Label Background="{x:Null}" Content="Score:" Height="Auto" Foreground="White"/>
-                    <TextBox x:Name="scoreTxt" Width="200" Height="25" HorizontalAlignment="Left"/>
-                    <Label Background="{x:Null}" Content="Course:" Height="Auto" Foreground="White"/>
-                    <TextBox x:Name="courseTxt" Width="200" Height="25" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="scoreTxt" Width="200" Height="25" HorizontalAlignment="Left"/>                    
                     <Label Background="{x:Null}" Content="Select Date Played:" Height="Auto" Foreground="White"/>
                     <DatePicker x:Name="datePlayed" />
                     <Button x:Name="enterDataBtn" Content="Enter Data" Margin="0,20,0,0" Foreground="White" BorderBrush="White" Click="enterDataBtn_Click" >

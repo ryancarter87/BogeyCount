@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Collections;
 
 namespace BogeyCount
 {
@@ -40,12 +41,30 @@ namespace BogeyCount
         private void viewScores_Click(object sender, RoutedEventArgs e)
         {
             enterPanel.Visibility = Visibility.Collapsed;
-            allScoresView.Visibility = Visibility.Visible;            
+            scoresViewText.Visibility = Visibility.Visible;
+            
+            // Loop through the objects in people list. Add the name, dates & scores to a string and add this string 
+            // to scoresViewText textbox.
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < peopleList.Count; i++)
+                {
+                    // Loop through the values in each object's dictionary to see how many dates and scores exist. Add these values along with the name to a formatted string:
+                    sb.AppendLine(string.Format(peopleList[i].name));
+                    foreach (KeyValuePair<string, int> item in peopleList[i].dateScores)
+                    {
+                        sb.AppendLine(string.Format($"{item.Key}   {item.Value}\n"));
+
+                    }
+
+                    sb.AppendLine(string.Format("\n\n\n"));
+                }
+                scoresViewText.Text = sb.ToString();
+                                        
         }
 
         private void enterScores_Click(object sender, RoutedEventArgs e)
         {
-            allScoresView.Visibility = Visibility.Collapsed;
+            scoresViewText.Visibility = Visibility.Collapsed;
             enterPanel.Visibility = Visibility.Visible;
         }
 
